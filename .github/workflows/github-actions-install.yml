@@ -1,22 +1,24 @@
-name: GitHub Actions Install
-run-name: ${{ github.actor }} GitHub Actions 📦
+name: Runtimes Install
+run-name: Runtimes Install 📦
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Install-Go-And-NodeJS:
     runs-on: ubuntu-latest
-    env:
-      GO_ARCH: "amd64"
-      GO_VERSION: "1.21.3"
     steps:
-      - name: Setup Go 1.21.x
+      - name: Setup Go 1.21.3
         uses: actions/setup-go@v4
         with:
-          # Semantic version range syntax or exact version of Go
           go-version: '1.21.3'
+      - name: Setup NodeJS 21.1.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21.1.0'
       - run: go version
-  Go-Deeper-With-GitHub-Actions:
+      - run: node --version
+  Some-Checks:
     runs-on: ubuntu-latest
     needs: Explore-GitHub-Actions
     steps:
       - run: echo "👋 hello world 🌍"
       - run: go version
+      - run: node --version
