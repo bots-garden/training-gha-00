@@ -18,4 +18,8 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: go version
       - run: lsb_release -a
-      
+      - run: echo "hello world" > hello.txt
+  Go-Deeper-With-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat hello.txt 
