@@ -1,22 +1,15 @@
-name: GitHub Actions With Containers
-run-name: ${{ github.actor }} GitHub Actions 🐳
+name: Runtimes Install With Containers
+run-name: Runtimes Install 🐳
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+   Install-Go-And-NodeJS:
     runs-on: ubuntu-latest
     container:
-      image: philippecharriere494/my-ubuntu-go-nodejs-env:0.0.0
+      image: philippecharriere494/my-ubuntu-go-nodejs-env:0.0.1
     steps:
       - run: go version
       - run: lsb_release -a
-      # todo use a go code
-      
-  Go-Deeper-With-GitHub-Actions:
-    runs-on: ubuntu-latest
-    container:
-      image: philippecharriere494/my-ubuntu-go-nodejs-env:0.0.0
-    needs: Explore-GitHub-Actions
-    steps:
-      - run: echo "👋 hello world 🌍"
       - run: node --version
-      # todo use a javascript code
+      # todo use a go code      
+# If I use it for every job, it will be huge
+
