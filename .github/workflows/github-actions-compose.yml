@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: Deploy Application & Database 
         run: |
-          docker-compose -f ./compose.yaml up -d 
+          docker compose up -d 
