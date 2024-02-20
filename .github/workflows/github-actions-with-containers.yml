@@ -9,6 +9,7 @@ jobs:
     steps:
       - run: go version
       - run: lsb_release -a
+      # todo use a go code
       
   Go-Deeper-With-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -16,5 +17,6 @@ jobs:
       image: philippecharriere494/my-ubuntu-go-nodejs-env:0.0.0
     needs: Explore-GitHub-Actions
     steps:
-      - run: "👋 hello world 🌍"
+      - run: echo "👋 hello world 🌍"
       - run: node --version
+      # todo use a javascript code
